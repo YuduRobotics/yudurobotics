@@ -144,7 +144,7 @@ export default function ContactForm({
               onChange={handleChange}
               placeholder=" "
               required
-              className="block px-4 py-3 w-full text-sm text-secondary-foreground bg-transparent border border-[#D6D6D8] rounded-sm appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block px-4 py-3 w-full text-sm text-secondary-foreground bg-white border border-[#D6D6D8] rounded-sm appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
             />
             <label className="absolute text-sm text-secondary-foreground duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">
               Full Name
@@ -159,7 +159,7 @@ export default function ContactForm({
               onChange={handleChange}
               placeholder=" "
               required
-              className="block px-4 py-3 w-full text-sm text-secondary-foreground bg-transparent border border-[#D6D6D8] rounded-sm appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block px-4 py-3 w-full text-sm text-secondary-foreground bg-white border border-[#D6D6D8] rounded-sm appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
             />
             <label className="absolute text-sm text-secondary-foreground duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">
               Email
@@ -174,7 +174,7 @@ export default function ContactForm({
               onChange={handleChange}
               placeholder=" "
               required
-              className="block px-4 py-3 w-full text-sm text-secondary-foreground bg-transparent border border-[#D6D6D8] rounded-sm appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block px-4 py-3 w-full text-sm text-secondary-foreground bg-white border border-[#D6D6D8] rounded-sm appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
             />
             <label className="absolute text-sm text-secondary-foreground duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">
               Phone
@@ -188,7 +188,7 @@ export default function ContactForm({
               onChange={handleChange}
               required
               disabled={defaultEnquiryType !== ""}
-              className="block px-4 py-3 w-full text-sm text-secondary-foreground bg-transparent border border-[#D6D6D8] rounded-sm appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block px-4 py-3 w-full text-sm text-secondary-foreground bg-white border border-[#D6D6D8] rounded-sm appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
             >
               <option value="" disabled />
               <option value="Partner">Partner</option>
@@ -209,7 +209,7 @@ export default function ContactForm({
               placeholder=" "
               rows={4}
               required
-              className="block px-4 py-3 w-full text-sm text-secondary-foreground bg-transparent border border-[#D6D6D8] rounded-sm appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
+              className="block px-4 py-3 w-full text-sm text-secondary-foreground bg-white border border-[#D6D6D8] rounded-sm appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
             />
             <label className="absolute text-sm text-secondary-foreground duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">
               Message
