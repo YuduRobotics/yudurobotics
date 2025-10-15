@@ -88,7 +88,7 @@ const FloatingWhatsApp = () => {
 
       {/* Add Dialog for Contact Form */}
       <Dialog open={showContactForm} onOpenChange={setShowContactForm}>
-        <DialogContent className="sm:max-w-[600px] p-1 bg-transparent border-none">
+        <DialogContent className="sm:max-w-[600px] p-1 bg-white border-none">
           <div className="flex justify-end  absolute top-2 right-2">
             <button
               type="button"
