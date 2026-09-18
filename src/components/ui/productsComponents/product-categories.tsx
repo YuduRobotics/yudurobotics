@@ -150,13 +150,15 @@ export default function ProductCategories() {
             </div>
             <div className="hidden md:flex flex-col space-y-4 bg-card-foreground rounded-xlg lg:w-[90%] p-8 ">
               <div>
-                <Image
-                  width={500}
-                  height={500}
-                  alt={productDetails.name || "Product image"}
-                  src={productDetails.image}
-                  className="w-[100%]"
-                />
+                {productDetails.image && (
+                  <Image
+                    width={500}
+                    height={500}
+                    alt={productDetails.name || "Product image"}
+                    src={productDetails.image}
+                    className="w-[100%]"
+                  />
+                )}
               </div>
               <div>
                 <h1 className="font-tthoves-semiBold text-xl">

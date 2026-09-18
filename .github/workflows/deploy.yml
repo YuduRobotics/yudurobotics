@@ -14,7 +14,7 @@ concurrency:
 env:
   DEPLOY_PATH: /var/www/html/yudurobotics
   PM2_APP_NAME: yudurobotics
-  NODE_VERSION: "18.18.1"
+  NODE_VERSION: "20.18.1"
 
 jobs:
   deploy:

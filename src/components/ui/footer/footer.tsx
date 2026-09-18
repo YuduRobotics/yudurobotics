@@ -129,6 +129,17 @@ const Footer = () => {
     window.open("https://wa.me/917975705131", "_blank");
   };
 
+  const renderContactValue = (text?: string) => {
+    if (!text) return null;
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) {
+      return <a href={`mailto:${text}`}>{text}</a>;
+    }
+    if (/^[+\d][\d\s-]{6,}$/.test(text)) {
+      return <a href={`tel:${text.replace(/[\s-]/g, "")}`}>{text}</a>;
+    }
+    return text;
+  };
+
   return (
     <div className="text-primary-foreground flex flex-col justify-around">
       {/* First Section */}
@@ -155,7 +166,7 @@ const Footer = () => {
         </div>
       </div> */}
       {/* Contact us Section */}
-      <div className="py-20">
+      <div id="footer-contact-form-component" className="scroll-mt-24 py-20">
         <div className="flex flex-col  lg:items-start">
           <h1 className="font-tthoves">Contact us</h1>
 
@@ -184,8 +195,7 @@ const Footer = () => {
                 },
                 key: number
               ) => (
-                <button
-                  type="button"
+                <div
                   key={key}
                   className={`flex flex-col space-y-2 text-left ${
                     value.type === "Live chat"
@@ -202,12 +212,12 @@ const Footer = () => {
                   <h1 className="font-tthoves">{value.type}</h1>
                   <p className="font-tthoves opacity-70">{value.text}</p>
                   <p className="w-[70%] xl:text-lg md:text-base font-tthoves">
-                    {value.contact_by}
+                    {renderContactValue(value.contact_by)}
                   </p>
                   <p className="w-[70%] xl:text-lg md:text-base font-tthoves">
-                    {value.contact_by2}
+                    {renderContactValue(value.contact_by2)}
                   </p>
-                </button>
+                </div>
               )
             )}
           </div>

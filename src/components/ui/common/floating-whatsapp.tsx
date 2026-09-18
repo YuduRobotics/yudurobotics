@@ -7,8 +7,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import ContactForm from "./contact-us-form";
+import ContactFormDialog from "./contact-form-dialog";
 import { X } from "lucide-react";
 import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
@@ -87,21 +86,10 @@ const FloatingWhatsApp = () => {
       </PopoverContent>
 
       {/* Add Dialog for Contact Form */}
-      <Dialog open={showContactForm} onOpenChange={setShowContactForm}>
-        <DialogContent className="sm:max-w-[600px] p-1 bg-white border-none">
-          <div className="flex justify-end  absolute top-2 right-2">
-            <button
-              type="button"
-              name="close"
-              onClick={() => setShowContactForm(false)}
-              className="p-2 hover:bg-gray-100 rounded-full"
-            >
-              <X className="h-4 w-4" color="black" />
-            </button>
-          </div>
-          <ContactForm />
-        </DialogContent>
-      </Dialog>
+      <ContactFormDialog
+        open={showContactForm}
+        onOpenChange={setShowContactForm}
+      />
     </Popover>
   );
 };

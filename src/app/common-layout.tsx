@@ -9,52 +9,8 @@ import Footer from "@/components/ui/footer/footer";
 import renderSvg from "@/svgImport";
 import FloatingWhatsApp from "@/components/ui/common/floating-whatsapp";
 import { useRouter } from "next/navigation";
-import localFont from "next/font/local";
 import { ArrowUp } from "lucide-react";
 import Navbar from "@/components/ui/common/navbar";
-
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import Script from "next/script";
-
-const cobaltRidge = localFont({
-  src: "./../../fonts/CobaltRidge.otf",
-  variable: "--font-cobalt",
-  display: "swap",
-  preload: true,
-  fallback: ["system-ui", "sans-serif"],
-});
-
-const ttHovesRegular = localFont({
-  src: "./../../fonts/TT Hoves Regular.otf",
-  variable: "--font-tthoves-regular",
-  display: "swap",
-  preload: true,
-  fallback: ["system-ui", "sans-serif"],
-});
-
-const ttHovesMedium = localFont({
-  src: "./../../fonts/TT Hoves Medium.otf",
-  variable: "--font-tthoves-medium",
-  display: "swap",
-  preload: true,
-  fallback: ["system-ui", "sans-serif"],
-});
-
-const ttHovesDemiBold = localFont({
-  src: "./../../fonts/TT Hoves DemiBold.otf",
-  variable: "--font-tthoves-demibold",
-  display: "swap",
-  preload: true,
-  fallback: ["system-ui", "sans-serif"],
-});
-
-const ttHovesBold = localFont({
-  src: "./../../fonts/TT Hoves Bold.otf",
-  variable: "--font-tthoves-bold",
-  display: "swap",
-  preload: true,
-  fallback: ["system-ui", "sans-serif"],
-});
 
 const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
@@ -129,121 +85,66 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   );
 
   return (
-    <html
-      lang="en"
-      className={`${cobaltRidge.variable} ${ttHovesRegular.variable} ${ttHovesMedium.variable} ${ttHovesDemiBold.variable} ${ttHovesBold.variable} w-screen overflow-x-hidden`}
-    >
-      <head>
-        <link rel="icon" href="assets/favicon.ico" />
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-D90W2RDVFK"
-        />
-
-        <Script id="google-analytics">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-   gtag('consent', 'default', {
-                    'analytics_storage': 'denied'
-                });
-gtag('config', 'G-D90W2RDVFK');`}
-        </Script>
-
-        <Script id="google-tag-manager">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5G8Q4Z7Q');
-
-            `}
-        </Script>
-      </head>
-
-      <body>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5G8Q4Z7Q"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
-        </noscript>
-
-        <div className="group">
-          <div className="fixed w-screen top-0 left-0 h-[75px] z-50">
-            <div className="px-8 lg:px-28 py-4 bg-primary">
-              <div className="flex justify-between items-center">
-                <Link
-                  href="/home"
-                  className="flex space-x-3 items-center w-[50%] lg:w-[20%]"
-                  area-label="logo"
+    <div className="group">
+      <div className="fixed w-screen top-0 left-0 h-[75px] z-50">
+        <div className="px-8 lg:px-28 py-4 bg-primary">
+          <div className="flex justify-between items-center">
+            <Link
+              href="/home"
+              className="flex space-x-3 items-center w-[50%] lg:w-[20%]"
+              area-label="logo"
+            >
+              {renderSvg("logoYudoRobo")}
+            </Link>
+            <div className="lg:hidden">
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                onClick={() => setIsDrawerOpen(true)}
+                className="border border-transparent hover:border-hoverButton1 hover:bg-hoverButtonGradient bg-buttonGradient cursor-pointer items-center justify-center rounded-buttons transition-all ease-in-out"
+              >
+                <MenuIcon />
+              </IconButton>
+            </div>
+            <div className="space-x-4 hidden lg:flex lg:justify-center lg:items-center text-primary-foreground">
+              {NavBarItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="relative group font-tthoves-semiBold hover:scale-105 transition-all ease-in-out"
                 >
-                  {renderSvg("logoYudoRobo")}
-                </Link>
-                <div className="lg:hidden">
-                  <IconButton
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    onClick={() => setIsDrawerOpen(true)}
-                    className="border border-transparent hover:border-hoverButton1 hover:bg-hoverButtonGradient bg-buttonGradient cursor-pointer items-center justify-center rounded-buttons transition-all ease-in-out"
+                  <Link
+                    href={item.link}
+                    onClick={(e) => handleLinkClick(e, item.link)}
+                    className="text-primary-foreground text-center text-base px-3  transition-all"
                   >
-                    <MenuIcon />
-                  </IconButton>
+                    {item.name}
+                  </Link>
                 </div>
-                <div className="space-x-4 hidden lg:flex lg:justify-center lg:items-center text-primary-foreground">
-                  {NavBarItems.map((item) => (
-                    <div
-                      key={item.id}
-                      className="relative group font-tthoves-semiBold hover:scale-105 transition-all ease-in-out"
-                    >
-                      <Link
-                        href={item.link}
-                        onClick={(e) => handleLinkClick(e, item.link)}
-                        className="text-primary-foreground text-center text-base px-3  transition-all"
-                      >
-                        {item.name}
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-          <Drawer
-            anchor="top"
-            open={isDrawerOpen}
-            onClose={toggleDrawer(false)}
-          >
-            {drawerList()}
-          </Drawer>
-          <FloatingWhatsApp />
-          {showScrollToTop && (
-            <button
-              type="button"
-              onClick={scrollToTop}
-              className="fixed bottom-2 sm:right-4 z-40 right-2 text-white flex border-2 border-blue-950/40 justify-center items-center p-2 w-16 h-16 bg-white rounded-full shadow-lg transition-all "
-              title="Scroll to top"
-            >
-              {/* <div> */}
-              <ArrowUp color="black" />
-              {/* </div> */}
-            </button>
-          )}
-          <main className="mb-24">{children}</main>
-          {/* <div className="w-full -mb-1 mt-24 pt-24">{renderSvg("bottomSection")}</div> */}
-          <div className="px-4 lg:px-28 py-4 bg-primary">
-            <Footer />
-          </div>
         </div>
-        <GoogleTagManager gtmId="GTM-5G8Q4Z7Q" />
-        <GoogleAnalytics gaId="G-D90W2RDVFK" />
-      </body>
-    </html>
+      </div>
+      <Drawer anchor="top" open={isDrawerOpen} onClose={toggleDrawer(false)}>
+        {drawerList()}
+      </Drawer>
+      <FloatingWhatsApp />
+      {showScrollToTop && (
+        <button
+          type="button"
+          onClick={scrollToTop}
+          className="fixed bottom-2 sm:right-4 z-40 right-2 text-white flex border-2 border-blue-950/40 justify-center items-center p-2 w-16 h-16 bg-white rounded-full shadow-lg transition-all "
+          title="Scroll to top"
+        >
+          <ArrowUp color="black" />
+        </button>
+      )}
+      <main className="mb-24">{children}</main>
+      <div className="px-4 lg:px-28 py-4 bg-primary">
+        <Footer />
+      </div>
+    </div>
   );
 };
 

@@ -25,7 +25,7 @@ const GetInTouch = () => {
         </p>
       </div>
 
-      <a href="#footer-contact-form-component" className="">
+      <a href="#footer-contact-form-component">
         <Button
           className="rounded-full"
           onClick={() => {
