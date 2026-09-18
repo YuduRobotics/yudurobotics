@@ -357,7 +357,7 @@ export const products = [
 ];
 
 const getWhatsAppLink = (productName: string) => {
-  return `https://wa.me/919606755032?text=Hi,%20I%20want%20to%20buy%20${encodeURIComponent(
+  return `https://wa.me/917975705131?text=Hi,%20I%20want%20to%20buy%20${encodeURIComponent(
     productName
   )}`;
 };

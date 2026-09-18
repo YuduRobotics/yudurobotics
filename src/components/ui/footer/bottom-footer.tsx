@@ -145,8 +145,8 @@ export default function BottomFooter() {
                 : activeDialog === "terms" ? "Terms of Service" : "Warranty"}
             </DialogTitle>
             <DialogDescription className="text-black">
-              {activeDialog === "privacy"
-                ? "Last Updated: 31st October 2024"
+              {activeDialog === "warranty"
+                ? "Last Updated: 25th February 2026"
                 : "Last Updated: 31st October 2024"}
             </DialogDescription>
           </DialogHeader>

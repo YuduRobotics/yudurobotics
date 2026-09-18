@@ -14,7 +14,7 @@ import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
 const FloatingWhatsApp = () => {
   // const router = useRouter();
-  const phoneNumber = "919606755032";
+  const phoneNumber = "917975705131";
   const [isOpen, setIsOpen] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
 

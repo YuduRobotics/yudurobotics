@@ -46,9 +46,11 @@ export default function WarrantyContent() {
           If a defect is identified, products may be repaired or replaced. Replacement products may be new or refurbished. Issues must be reported within one week of receiving the product with proper proof.
         </p>
         <h3 className="text-xl mb-2 font-tthoves-medium">1.7 Shipping Costs for Warranty Claims</h3>
-        <p className="mb-4 font-tthoves">
-          Shipping costs depend on whether the defect occurred upon receipt or after use. Proper proof is required for claims.
-        </p>
+        <ul className="list-disc list-inside mb-4 font-tthoves">
+          <li><strong>Shipping Fees:</strong> Please note that shipping charges are applicable to all products, including those currently covered under warranty.</li>
+          <li><strong>Warranty Service:</strong> Technical service and repairs for products within their one-year warranty period will be provided at zero cost (subject to terms and conditions).</li>
+          <li><strong>Return Shipping:</strong> While the service itself is free under warranty, the customer is responsible for all shipping and handling costs associated with sending the product to us and its return to the customer&#39;s location.</li>
+        </ul>
         <h3 className="text-xl mb-2 font-tthoves-medium">1.8 Process for Warranty Claims</h3>
         <p className="mb-4 font-tthoves">
           Contact support at <a href="mailto:support@yudurobotics.com" className="text-blue-600 underline font-tthoves-medium">support@yudurobotics.com</a> or call +91 9606755032. Ship the product securely if required.
@@ -75,7 +77,7 @@ export default function WarrantyContent() {
         <p className="mb-4 font-tthoves">
           Email: <a href="mailto:support@yudurobotics.com" className="text-blue-600 underline">support@yudurobotics.com</a>
           <br />
-          Phone: +91 960 675 5032
+          Phone: +91 910 849 4203
           <br />
           Website: <a href="http://www.yudurobotics.com" className="text-blue-600 underline">www.yudurobotics.com</a>
         </p>

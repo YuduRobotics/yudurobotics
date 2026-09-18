@@ -84,10 +84,17 @@ const Footer = () => {
   };
   const contact_options = [
     {
-      type: "Contacts",
+      type: "Sales",
+      text: "For all your business needs.",
+      contact_by: "business@yudurobotics.com",
+      contact_by2: "+91 960 604 7527",
+      icon_image: <FooterIcon iconType="mail" color={iconColor[index]} />,
+    },
+    {
+      type: "Technical Support",
       text: "Our friendly team is here to help.",
       contact_by: "support@yudurobotics.com",
-      contact_by2: "+91 960 675 5032",
+      contact_by2: "+91 910 849 4203",
       icon_image: <FooterIcon iconType="mail" color={iconColor[index]} />,
     },
     {
@@ -119,7 +126,7 @@ const Footer = () => {
   }
 
   const handleClick = () => {
-    window.open("https://wa.me/919606755032", "_blank");
+    window.open("https://wa.me/917975705131", "_blank");
   };
 
   return (
@@ -265,7 +272,7 @@ const Footer = () => {
 
         <div className="flex flex-col space-y-4 lg:space-x-32 justify-start lg:justify-start lg:flex-row lg:space-y-0 ">
           <p className="text-xs lg:text-lg font-tthoves opacity-70">
-            © 2025 Yudu Robotics. A division of Evobi Automations Pvt.Ltd. All rights reserved.
+            © 2026 Yudu Robotics. A division of Evobi Automations Pvt.Ltd. All rights reserved.
           </p>
           <div className="flex space-x-6">
             {social_share.map((item, key) => (
