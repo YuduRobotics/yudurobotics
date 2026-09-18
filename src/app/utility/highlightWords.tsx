@@ -1,4 +1,5 @@
 // utils/highlightWords.ts
+import type { JSX } from "react";
 
 export function highlightWords(
   heading: string,

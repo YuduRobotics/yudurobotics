@@ -2,6 +2,8 @@
 import { useRef, useEffect, useState, type ReactNode } from "react";
 import { useSpring, animated, type SpringConfig } from "@react-spring/web";
 
+const AnimatedDiv = animated.div as React.ElementType;
+
 interface AnimatedContentProps {
   children: ReactNode;
   distance?: number;
@@ -73,9 +75,9 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
   });
 
   return (
-    <animated.div ref={ref} style={springProps}>
+    <AnimatedDiv ref={ref} style={springProps}>
       {children}
-    </animated.div>
+    </AnimatedDiv>
   );
 };
 

@@ -45,9 +45,7 @@ const ProductFeatures = dynamic(
     ssr: true,
   }
 );
-const FAQs = dynamic(() => import("@/components/ui/home/faqs"), {
-  ssr: false, // This disables server-side rendering for the FAQ component
-});
+const FAQs = dynamic(() => import("@/components/ui/home/faqs-client"));
 // Add this interface before the HomePage component
 
 export default async function HomePage() {

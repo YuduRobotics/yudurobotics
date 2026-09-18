@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, type JSX } from "react";
 // import JumpingButtons from "../common/jumping-buttons";
 import renderImg from "@/imgImport";
 // import ContactForm from "../common/contact-us-form";

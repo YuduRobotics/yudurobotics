@@ -50,9 +50,9 @@ const ttHovesBold = localFont({
 export async function generateMetadata({
   params,
 }: {
-  params: { product: string };
+  params: Promise<{ product: string }>;
 }): Promise<Metadata> {
-  const product = params.product;
+  const { product } = await params;
   const actualProduct =
     product === "roboki" ? "peecee" : product === "crawl_e" ? "zing" : product;
 
@@ -93,14 +93,15 @@ export async function generateMetadata({
   };
 }
 
-export default function ProductLayout({
+export default async function ProductLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { product: string };
+  params: Promise<{ product: string }>;
 }) {
-  let currentProduct = params.product === "roboki" ? "peecee" : params.product;
+  const { product } = await params;
+  let currentProduct = product === "roboki" ? "peecee" : product;
   currentProduct = currentProduct === "crawl_e" ? "zing" : currentProduct;
 
   return (

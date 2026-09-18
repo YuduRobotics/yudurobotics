@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { useRef, useEffect, useState, type ReactNode } from "react";
+import { useRef, useEffect, useState, type ReactNode, type JSX } from "react";
 import { useSprings, animated, type SpringValue } from "@react-spring/web";
 import React from "react";
+
+const AnimatedSpan = animated.span as React.ElementType;
 
 interface BlurTextProps {
   text: string | JSX.Element | JSX.Element[];
@@ -138,7 +140,7 @@ const BlurText: React.FC<BlurTextProps> = ({
         // For JSX elements, we want to clone them with animation props
         if (React.isValidElement(elements[index])) {
           return (
-            <animated.span
+            <AnimatedSpan
               key={index}
               style={props}
               className="inline-block w-full transition-transform will-change-[transform,filter,opacity]"
@@ -147,13 +149,13 @@ const BlurText: React.FC<BlurTextProps> = ({
                 key: `animated-element-${index}`,
                 // Don't override classes that might be in the original element
               })}
-            </animated.span>
+            </AnimatedSpan>
           );
         }
 
         // For string elements, render as before
         return (
-          <animated.span
+          <AnimatedSpan
             key={index}
             style={props}
             className="inline-block transition-transform will-change-[transform,filter,opacity]"
@@ -163,7 +165,7 @@ const BlurText: React.FC<BlurTextProps> = ({
               typeof text === "string" &&
               index < elements.length - 1 &&
               "\u00A0"}
-          </animated.span>
+          </AnimatedSpan>
         );
       })}
     </div>

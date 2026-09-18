@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export default async function ProductPage({ params }: any) {
-  const { product } = params;
+  const { product } = await params;
 
   const data = mockData[product as keyof typeof mockData];
 
@@ -34,7 +34,7 @@ export default async function ProductPage({ params }: any) {
   }
   const route = ["peecee", "roboki", "zing", "crawl_e", "klaw_b", "plode"];
 
-  const index = route.indexOf(params.product);
+  const index = route.indexOf(product);
 
   // const ishorizontal: string = "true";
   // const text1: string = "I'm here to";
